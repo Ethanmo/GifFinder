@@ -11,7 +11,7 @@ function generateButtons(){
 
 function addNewButton(){
     var pokeButton = $("<button class='pokeButton'>" + document.getElementById("newButtonName").value + "</button>");
-    document.getElementById("newButtonName").value = '';
+    $("#newButtonName")[0].value="";
     $(".buttonDiv").append(pokeButton);
 } 
 
@@ -36,8 +36,8 @@ $(document).on("click", ".pokeButton", function() {
                 imageDiv.attr("data-animate", results[i].images.fixed_height.url);
                 imageDiv.attr("data-still", results[i].images.fixed_height_still.url);
                 imageDiv.attr("class", "clickableGif");
-                pokeDiv.append(ratingDiv);
                 pokeDiv.append(imageDiv);
+                pokeDiv.append(ratingDiv);
                 $("#showGifs").append(pokeDiv);
 
             }
